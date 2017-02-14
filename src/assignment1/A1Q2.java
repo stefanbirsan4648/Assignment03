@@ -22,29 +22,29 @@ public class A1Q2 {
     public static void main(String[] args) {
         // TODO code application logic here
         //Creating a new City called Kitchener
-        
-        City kitchener = new City (); 
-        
+
+        City kitchener = new City();
+
         //Creating a Robot
-        
-        Robot romo = new Robot (kitchener,1,2,Direction.SOUTH); 
-        
+
+        Robot romo = new Robot(kitchener, 1, 2, Direction.SOUTH);
+
         // Creating Walls for the robot
-        
-        new Wall(kitchener,1,1,Direction.NORTH);  
-        new Wall(kitchener,1,2,Direction.NORTH);
-        new Wall(kitchener,1,2,Direction.EAST);
-        new Wall(kitchener,1,2,Direction.SOUTH);
-        new Wall(kitchener,1,1,Direction.WEST);
-        new Wall(kitchener,2,1,Direction.WEST);
-        new Wall(kitchener,2,1,Direction.SOUTH);
-        
+
+        new Wall(kitchener, 1, 1, Direction.NORTH);
+        new Wall(kitchener, 1, 2, Direction.NORTH);
+        new Wall(kitchener, 1, 2, Direction.EAST);
+        new Wall(kitchener, 1, 2, Direction.SOUTH);
+        new Wall(kitchener, 1, 1, Direction.WEST);
+        new Wall(kitchener, 2, 1, Direction.WEST);
+        new Wall(kitchener, 2, 1, Direction.SOUTH);
+
         //Creating Thing for Robot
-        
-        new Thing(kitchener,2,2);
-        
+
+        new Thing(kitchener, 2, 2);
+
         //Directing the robot where to go
-        
+
         romo.turnLeft();
         romo.turnLeft();
         romo.turnLeft();
@@ -68,16 +68,17 @@ public class A1Q2 {
         romo.turnLeft();
         romo.turnLeft();
         romo.turnLeft();
-        
-           
-           
-     
-        
-        
-        
-           
-       
-    
-    
-    
+
+
+
+
+
+
+
+
+
+
+
+
+    }
 }
