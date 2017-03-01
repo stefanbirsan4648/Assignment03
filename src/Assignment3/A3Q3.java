@@ -50,50 +50,40 @@ public class A3Q3 {
         new Thing(kitchener, 3, 1);
         new Thing(kitchener, 3, 4);
 
-        while (romo.frontIsClear()) {
+        while (true) {
             romo.move();
             if (romo.canPickThing()) {
                 romo.pickThing();
 
             }
-            if (!romo.frontIsClear()) {
-                if (romo.getDirection() == Direction.EAST) {
-                    romo.turnLeft();
+            while (romo.frontIsClear() && romo.getAvenue() == 1) {
+                if (romo.canPickThing()) {
+                    romo.pickThing();
                 }
-                romo.turnLeft();
-                romo.turnLeft();
-                if (romo.frontIsClear()) {
-                    romo.move();
-                    romo.turnLeft();
-                    romo.turnLeft();
-                    romo.turnLeft();
-                }
-            } else if (romo.getDirection() == Direction.WEST) {
-                romo.turnLeft();
                 romo.move();
-                romo.turnLeft();
-            }
 
+            }
             if (romo.canPickThing()) {
                 romo.pickThing();
             }
-        }
-        while (romo.getDirection() != Direction.WEST) {
 
-            while (romo.getAvenue() != 1) {
-
-                while (romo.getDirection() != Direction.NORTH) {
-
-                    while(romo.getStreet() != 1)
-                    {
-                       
-
-                        romo.turnLeft();
-                        romo.turnLeft();
-                        romo.turnLeft();
-
-                    }
+            if (!romo.frontIsClear() && romo.getAvenue() == 1) {
+                romo.turnLeft();
+                
+                if(romo.frontIsClear()){
+                    romo.move();
+                    romo.turnLeft();
+                   
                 }
+                else{romo.turnLeft();
+                romo.turnLeft();
+            }
+            
+        }
+        
+
+            if (romo.getAvenue() == 1 && romo.getStreet() == 1 && romo.getDirection() == Direction.EAST) {
+                break;
             }
         }
     }
