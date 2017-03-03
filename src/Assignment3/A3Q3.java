@@ -69,12 +69,12 @@ public class A3Q3 {
 
             if (!romo.frontIsClear() && romo.getAvenue() == 1) {
                 romo.turnLeft();
-                
-                if(romo.frontIsClear()){
-                    romo.move();
-                    romo.turnLeft();
-                   
+                romo.turnLeft();
+            } 
+                if(romo.canPickThing()){
+                    romo.pickThing();
                 }
+              
                 else{romo.turnLeft();
                 romo.turnLeft();
             }
