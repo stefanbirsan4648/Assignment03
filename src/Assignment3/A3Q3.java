@@ -49,14 +49,15 @@ public class A3Q3 {
         new Thing(kitchener, 2, 4);
         new Thing(kitchener, 3, 1);
         new Thing(kitchener, 3, 4);
-
+          //this happens if the statement is true
         while (true) {
             romo.move();
+            //if romo can pick things
             if (romo.canPickThing()) {
                 romo.pickThing();
-
-            }
-            while (romo.frontIsClear() && romo.getAvenue() == 1) {
+          }
+           //romo picks thins if not on Avenue 1 and if front is clear
+            while (romo.frontIsClear() && romo.getAvenue() != 1) {
                 if (romo.canPickThing()) {
                     romo.pickThing();
                 }
@@ -66,22 +67,26 @@ public class A3Q3 {
             if (romo.canPickThing()) {
                 romo.pickThing();
             }
-
-            if (!romo.frontIsClear() && romo.getAvenue() == 1) {
+                //if not on Avenue 1 and if  front isn't clear tje robot will turn around
+            if (!romo.frontIsClear() && romo.getAvenue() != 1) {
                 romo.turnLeft();
-                romo.turnLeft();
-            } 
-                if(romo.canPickThing()){
-                    romo.pickThing();
-                }
-              
-                else{romo.turnLeft();
                 romo.turnLeft();
             }
-            
-        }
-        
+            if (romo.canPickThing()) {
+                romo.pickThing();
+            }
+            if (!romo.frontIsClear() && romo.getAvenue() == 1) {
+                romo.turnLeft();
 
+                if (romo.frontIsClear()) {
+                    romo.move();
+                    romo.turnLeft();
+                } else {
+                    romo.turnLeft();
+                    romo.turnLeft();
+                }
+
+            }
             if (romo.getAvenue() == 1 && romo.getStreet() == 1 && romo.getDirection() == Direction.EAST) {
                 break;
             }
